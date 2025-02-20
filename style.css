@@ -1,0 +1,283 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white overlay */
+    z-index: 0; /* Behind the game container */
+   
+}
+
+
+
+.game-container {
+    width: 1080px; /* Match the screen width */
+    height: 1920px; /* Match the screen height */
+    position: relative;
+    background-image: url(bgdfccnew.png);
+    background-repeat: no-repeat;
+    background-size: cover; /* Ensure the background covers the entire container */
+    background-position: center; /* Center the background */
+    border: 1px solid #ccc;
+    overflow: hidden;
+    margin: auto;
+    z-index: 1;
+}
+
+@media (min-width: 1080px) and (min-height: 1920px) {
+    .game-container {
+        width: 1080px;
+        height: 1920px;
+        background-image: url(bgdfccnew.png);
+        background-size: cover;
+        background-position: center;
+    }
+}
+
+#startScreen h1 {
+    color: #ff2222ee; /* Text color */
+    font-size: 70px; /* Font size */
+    margin-bottom: 110px;
+    width: 600px;/* Space below the text */
+    text-align: center; 
+    font-weight: 800;
+    font-family: 'Montserrat', sans-serif; 
+    /* Center align the text */
+}
+#startScreen h3{
+    color: #000000; 
+    font-size: 70px; /* Font size */
+    margin-bottom: 70px; 
+    width: 600px;
+    text-align: center; 
+    font-weight: 700;
+    font-family: 'Baloo 2', sans-serif; 
+}
+
+
+
+#startScreen, #endScreen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    /*background-image: url(Logo.png);*/
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-size:contain; /* Scales the image to cover the element */
+    background-position: center 1030px; /* Centers the image */
+    color: rgb(0, 0, 0);
+    z-index: 1;
+    
+}
+
+#startButton, #restartButton {
+    padding: 20px 40px;
+    font-size: 60px;
+    height: 100px;
+    width: 500px;
+    background: linear-gradient(45deg, #08ff1c, #ff4040, #7c4cff); /* Colorful gradient */
+    border: none;
+    border-radius: 20px;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    display: block;
+    font-weight: 600;
+    position: relative; /* For the overlay effect */
+    overflow: hidden; /* To contain the overlay */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition for effects */
+}
+
+#startButton::before, #restartButton::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3); /* Light overlay */
+    border-radius: 20px;
+    transform: scale(0);
+    transition: transform 0.4s ease; /* Scale transition for overlay */
+}
+
+#startButton:hover, #restartButton:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Shadow effect */
+}
+
+#startButton:hover::before, #restartButton:hover::before {
+    transform: scale(1); /* Show overlay on hover */
+}
+
+
+#score, #timer {
+    position: absolute;
+    top: -30px;
+    font-size: 70px;
+    color: black;
+    
+}
+
+#score {
+    left: 40px;
+    top: 50px;
+    color: rgb(255, 255, 255);
+}
+
+#timer {
+    align-items: center;
+    right: 40px;
+    top: 50px;
+    color: #ffffff;
+}
+
+#sausageArea {
+    position: absolute; 
+    top: 50%; 
+    left: 43%;
+    transform: translate(-50%, -50%); 
+    width: 1000px; 
+    height: 1800px; 
+    padding: 500px; 
+    box-sizing: border-box; 
+   
+    background-color: transparent; 
+}
+
+.sausage {
+    width: 600px;
+    height: 150px;
+    background-image: url('dfcclogo.jpg'); /* Add your sausage image here */
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: 1;
+    pointer-events: auto;
+  
+}
+.sausage:active {
+    outline: none; /* Remove default outline */
+    touch-action: none; /* Prevent touch feedback */
+}
+h2{
+    font-size: 70px;
+    font-weight: 700;
+    color: #000000;
+    font-family: 'Baloo 2', sans-serif; 
+
+}
+p{
+    font-size: 60px;
+    color: #000000;
+    font-weight: 700;
+    font-family: 'Baloo 2', sans-serif;
+    animation: pulse 1s ease infinite;
+ }
+    
+ 
+ 
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+  
+    50% {
+      transform: scale(1.1);
+    }
+  
+    100% {
+      transform: scale(1);
+    }
+  }
+
+
+@media (max-width: 428px) {
+    .game-container {
+        width: 400px;
+        height: 800px;
+        position: absolute;
+        padding: 10px; 
+    }
+
+    #startScreen h1, #startScreen h3, h2, p {
+        font-size: 28px; /* Adjust font size for mobile */
+        margin-bottom: 15px;
+        width: 300px;
+        text-align: center; 
+    }
+
+    #startButton, #restartButton {
+        font-size: 24px; /* Smaller buttons */
+        height: 50px; 
+        width: 80%; /* Use percentage for responsive width */
+        max-width: 300px; /* Limit max width */
+        padding: 10px; /* Adjust padding */
+    }
+
+    #score, #timer {
+        font-size: 24px; /* Smaller font size for score/timer */
+        top: 40px; /* Adjust position */
+    }
+
+    #sausageArea {
+        width: 100%; /* Full width */
+        height: 900px; /* Let height adjust */
+        padding: 10px; /* Reduce padding */
+        position: absolute;
+    }
+
+    .sausage {
+        width: 400px;
+        height: 100px;
+        background-image: url('dfcclogo.jpg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: absolute;
+        z-index: 1;
+      
+    }
+
+    #giftMessage {
+        font-size: 24px; /* Smaller font size */
+        text-align: center; /* Center align */
+        margin-top: 20px; /* Add spacing */
+    }
+
+    
+    #endScreen {
+        padding: 20px; /* Add padding */
+    }
+}
+.sliced {
+    animation: sliceAnimation 0.5s forwards;
+}
+
+@keyframes sliceAnimation {
+    0% {
+        transform: scaleX(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scaleX(0.5);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scaleX(0);
+        opacity: 0;
+    }
+}

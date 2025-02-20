@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>DFCC Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="overlay"></div>
+    <div class="game-container"> 
+        
+        <div id="startScreen">
+            
+            <h1>Welcome to the DFCC</h1>
+            <h3> Try to collect 20 DFCC logos!</h3>
+            <button id="startButton">Play</button>
+        </div>
+        <div id="gameScreen" style="display:none;"> 
+           
+            <div id="score">Score: 0</div>
+            <div id="timer">Time: 15s</div>
+            
+            <div id="giftMessage" >🎁 You have won a gift! 🎉</div>
+            <div id="sausageArea">
+                <video autoplay loop muted class="background-video">
+                    <source src="" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+        
+        <div id="endScreen" style="display:none;">
+            <h2>Game Over</h2>
+            <p>Your Score is <span id="finalScore">0</span></p>
+            <!--<button id="restartButton">Play Again</button>-->
+        </div> 
+       
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
