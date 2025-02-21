@@ -14,6 +14,7 @@ const sausageArea = document.getElementById('sausageArea');
 const finalScore = document.getElementById('finalScore');
 const giftMessage = document.getElementById('giftMessage'); // New element for the gift message
 
+
 const images = [
     "url('PNG/Anti Dandruff Shampoo.png')",
     "url('PNG/Anti Frizz Hair Gloss Serum.png')",
@@ -29,6 +30,19 @@ const images = [
     "url('dfccbook.png')",
     "url('dfccbook.png')"
 ];
+
+function preloadImages(imageUrls) {
+    imageUrls.forEach((imageUrl) => {
+        const img = new Image();
+        img.src = imageUrl.replace("url('", "").replace("')", ""); // Remove url('') wrapper
+    });
+}
+
+// Call preloadImages on window load
+window.onload = function () {
+    preloadImages(images);
+    enterFullscreen();
+};
 
 
 const sausagesPositions = [];
