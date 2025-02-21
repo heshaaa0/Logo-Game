@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,94 +13,119 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #f0f0f0; /* Fallback color */
-            font-family: Arial, sans-serif; /* Use a readable font for kiosks */
-            overflow: hidden; /* Prevent overflow of video */
+            background-color: #f0f0f0;
+            /* Fallback color */
+            font-family: Arial, sans-serif;
+            /* Use a readable font for kiosks */
+            overflow: hidden;
+            /* Prevent overflow of video */
         }
 
         .gift-container {
-            position: relative; /* Allow absolute positioning for children */
-            background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent background */
+            position: relative;
+            /* Allow absolute positioning for children */
+            background-color: rgba(255, 255, 255, 0.8);
+            /* Slightly transparent background */
             padding: 100px;
             border-radius: 10px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-            max-width: 90%; /* Ensure it fits within the screen */
+            max-width: 90%;
+            /* Ensure it fits within the screen */
             text-align: center;
-            z-index: 1; /* Ensure it sits above the video */
+            z-index: 1;
+            /* Ensure it sits above the video */
         }
 
         h1 {
-            color: #28a745; /* Green color for celebration */
-            font-size: 60px; /* Larger font size for readability */
-            margin-bottom: 20px; /* Space below the title */
+            color: #28a745;
+            /* Green color for celebration */
+            font-size: 60px;
+            /* Larger font size for readability */
+            margin-bottom: 20px;
+            /* Space below the title */
         }
 
         p {
-            font-size: 40px; /* Slightly larger font for the message */
-            margin-bottom: 40px; /* Space below the message */
+            font-size: 40px;
+            /* Slightly larger font for the message */
+            margin-bottom: 40px;
+            /* Space below the message */
         }
 
         button {
             padding: 15px 30px;
-            font-size: 24px; /* Larger button text */
+            font-size: 24px;
+            /* Larger button text */
             border: none;
             border-radius: 5px;
             background-color: #007bff;
             color: rgb(0, 0, 0);
             cursor: pointer;
-            transition: background-color 0.3s ease; /* Smooth transition for hover effect */
-            z-index: 1; /* Ensure it sits above the video */
+            transition: background-color 0.3s ease;
+            /* Smooth transition for hover effect */
+            z-index: 1;
+            /* Ensure it sits above the video */
         }
 
         button:hover {
-            background-color: #0056b3; /* Darker shade on hover */
+            background-color: #0056b3;
+            /* Darker shade on hover */
         }
 
         video.background-video {
-            position: absolute; /* Position the video absolutely */
+            position: absolute;
+            /* Position the video absolutely */
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Cover the entire area */
-            z-index: 0; /* Send the video behind the content */
+            object-fit: cover;
+            /* Cover the entire area */
+            z-index: 0;
+            /* Send the video behind the content */
         }
 
         /* Optional: Responsive adjustments for smaller screens */
         @media (max-width: 600px) {
             h1 {
-                font-size: 36px; /* Smaller title for smaller screens */
+                font-size: 36px;
+                /* Smaller title for smaller screens */
             }
+
             p {
-                font-size: 30px; /* Smaller text for smaller screens */
+                font-size: 30px;
+                /* Smaller text for smaller screens */
             }
+
             button {
-                font-size: 20px; /* Smaller button text for smaller screens */
+                font-size: 20px;
+                /* Smaller button text for smaller screens */
             }
         }
     </style>
 </head>
+
 <body>
-    <video autoplay loop muted class="background-video">
+    <video autoplay loop muted class="background-video" preload="auto">
         <source src="Video.mp4" type="video/mp4">
-       
+
     </video>
     <div class="gift-container">
         <h1>🎁 Congratulations!</h1>
         <p>You've won</p>
-       
+
     </div>
     <script>
         // Redirect to index.html after 10 seconds
-        setTimeout(function() {
+        setTimeout(function () {
             window.location.href = 'index.html'; // Change this to your main game page
         }, 10000); // 10000 milliseconds = 10 seconds
 
         // Redirect immediately when button is clicked
-        document.getElementById('playAgainButton').addEventListener('click', function() {
+        document.getElementById('playAgainButton').addEventListener('click', function () {
             window.location.href = 'index.html'; // Change this to your main game page
         });
     </script>
 </body>
-</html>
 
+</html>
