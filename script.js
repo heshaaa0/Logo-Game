@@ -15,12 +15,21 @@ const finalScore = document.getElementById('finalScore');
 const giftMessage = document.getElementById('giftMessage'); // New element for the gift message
 
 const images = [
-    "url('dfcclogo.jpg')", // Replace with actual image paths
+    "url('PNG/Anti Dandruff Shampoo.png')",
+    "url('PNG/Anti Frizz Hair Gloss Serum.png')",
+    "url('PNG/Damaged Repair Conditioner.png')",
+    "url('PNG/Damaged Repair Shampoo.png')",
+    "url('PNG/Hair Mask.png')",
+    "url('PNG/Hydro Boost Conditioner.png')",
+    "url('PNG/Hydro Boost Shampoo.png')",
+    "url('PNG/Moisture Plus Conditioner.png')",
+    "url('PNG/Anti Frizz Hair Gloss Serum.png')",
+    "url('PNG/Ultra Strong Hair Styling Gel.png')", // Replace with actual image paths
     "url('dfcccar.png')",
     "url('dfcclogo.jpg')",
     "url('dfcccard.png')",
     "url('dfccbook.png')",
-     "url('dfccbook.png')"
+    "url('dfccbook.png')"
 ];
 
 
@@ -158,7 +167,6 @@ function setSausageBG() {
 }
 
 function sliceSausage(sausage) {
-
     sausage.style.opacity = '0.7'; // Slightly dim the sausage for feedback
 
     setTimeout(() => {
@@ -167,8 +175,18 @@ function sliceSausage(sausage) {
 
     const sausageBackground = sausage.style.backgroundImage;
 
-    if (sausageBackground.includes('dfcclogo.jpg')) {
-        score++;
+    // Check if the background image is one of the product images
+    if (sausageBackground.includes('Anti Dandruff Shampoo.png') ||
+        sausageBackground.includes('Anti Frizz Hair Gloss Serum.png') ||
+        sausageBackground.includes('Damaged Repair Conditioner.png') ||
+        sausageBackground.includes('Damaged Repair Shampoo.png') ||
+        sausageBackground.includes('Hair Mask.png') ||
+        sausageBackground.includes('Hydro Boost Conditioner.png') ||
+        sausageBackground.includes('Hydro Boost Shampoo.png') ||
+        sausageBackground.includes('Moisture Plus Conditioner.png') ||
+        sausageBackground.includes('Ultra Strong Hair Styling Gel.png')) {
+
+        score++; // Increment score for valid product images
         scoreDisplay.textContent = `Score: ${score}`;
     }
 
@@ -184,10 +202,11 @@ function sliceSausage(sausage) {
 }
 
 
+
 startButton.addEventListener('click', startGame);
 restartButton.addEventListener('click', startGame);
 
-document.getElementById('homeButton').addEventListener('click', function() {
+document.getElementById('homeButton').addEventListener('click', function () {
     endScreen.style.display = 'none';
     startScreen.style.display = 'block';
     finalScore.textContent = '0';
@@ -206,7 +225,7 @@ sausage.addEventListener('click', (event) => {
     }
 });
 
-document.addEventListener('contextmenu', function(event) {
+document.addEventListener('contextmenu', function (event) {
     event.preventDefault();
 });
 
