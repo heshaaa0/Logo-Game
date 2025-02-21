@@ -213,7 +213,21 @@ function sliceSausage(sausage) {
     }
 }
 
+document.addEventListener("DOMContentLoaded", function() {
+    const video = document.getElementById("background-video");
+    const videoSource = "Video.mp4";
 
+    // Preload video using fetch
+    fetch(videoSource)
+        .then(response => response.blob())
+        .then(blob => {
+            const videoURL = URL.createObjectURL(blob);
+            video.src = videoURL;
+            video.play();
+            document.body.style.visibility = "visible";
+        })
+        .catch(error => console.error("Error preloading video:", error));
+});
 
 startButton.addEventListener('click', startGame);
 restartButton.addEventListener('click', startGame);
