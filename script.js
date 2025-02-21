@@ -207,7 +207,7 @@ function sliceSausage(sausage) {
         sausage.remove(); // Remove the sausage after the animation
     }, 500); // Match the timeout with the animation duration
 
-    if (score === 5) {
+    if (score === 20) {
         showGift();
     }
 }
