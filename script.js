@@ -26,8 +26,6 @@ const images = [
     "url('PNG/Anti Frizz Hair Gloss Serum.png')",
     "url('PNG/Ultra Strong Hair Styling Gel.png')", // Replace with actual image paths
     "url('dfcccar.png')",
-    "url('dfcclogo.jpg')",
-    "url('dfcccard.png')",
     "url('dfccbook.png')",
     "url('dfccbook.png')"
 ];
