@@ -28,6 +28,7 @@ const images = [
     "url('PNG/Ultra Strong Hair Styling Gel.png')", // Replace with actual image paths
     "url('toxic1.png')",
     "url('toxic2.png')",
+    "url('toxic1.png')",
 ];
 
 function preloadImages(imageUrls) {
