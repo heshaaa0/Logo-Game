@@ -26,9 +26,8 @@ const images = [
     "url('PNG/Moisture Plus Conditioner.png')",
     "url('PNG/Anti Frizz Hair Gloss Serum.png')",
     "url('PNG/Ultra Strong Hair Styling Gel.png')", // Replace with actual image paths
-    "url('dfcccar.png')",
-    "url('dfccbook.png')",
-    "url('dfccbook.png')"
+    "url('toxic1.png')",
+    "url('toxic2.png')",
 ];
 
 function preloadImages(imageUrls) {
@@ -213,7 +212,7 @@ function sliceSausage(sausage) {
     }
 }
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const video = document.getElementById("background-video");
     const videoSource = "Video.mp4";
 
