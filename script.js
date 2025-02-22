@@ -1,5 +1,5 @@
 let score = 0;
-let timeLeft = 15;
+let timeLeft = 20;
 let interval;
 let gameInterval;
 
@@ -49,7 +49,7 @@ const sausagesPositions = [];
 
 function startGame() {
     score = 0;
-    timeLeft = 15;
+    timeLeft = 20;
     scoreDisplay.textContent = 'Score: 0';
     timerDisplay.textContent = `Time: ${timeLeft}s`;
     giftMessage.style.display = 'none'; // Hide gift message at the start
