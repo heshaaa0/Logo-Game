@@ -152,6 +152,21 @@ html {
     /* Show overlay on hover */
 }
 
+#backButton {
+    padding: 20px 40px;
+    font-size: 60px;
+    height: 100px;
+    width: 500px;
+    background: linear-gradient(45deg, #000099, #7c4cff);
+    /* Colorful gradient */
+    border: none;
+    border-radius: 40px;
+    color: white;
+    cursor: pointer;
+    display: block;
+    font-weight: 600;
+    position: relative;
+}
 
 #score,
 #timer {

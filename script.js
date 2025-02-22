@@ -4,6 +4,7 @@ let interval;
 let gameInterval;
 
 const startButton = document.getElementById('startButton');
+const backButton = document.getElementById('backButton');
 const restartButton = document.getElementById('restartButton');
 const gameScreen = document.getElementById('gameScreen');
 const startScreen = document.getElementById('startScreen');
@@ -212,6 +213,10 @@ function sliceSausage(sausage) {
         showGift();
     }
 }
+
+backButton.addEventListener('click', () => {
+    window.location.href = 'https://miracle-kiosk-quiz.vercel.app/';  // Redirect to this URL
+});
 
 document.addEventListener("DOMContentLoaded", function () {
     const video = document.getElementById("background-video");
